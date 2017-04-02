@@ -1,0 +1,32 @@
+kickSStarter
+
+Sneaker design sharing website where users can post sneaker designs they've come up with, and users can comment on those designs.
+
+MVP:
+
+Load the site
+Display designs
+Display descriptions of designs
+Update designs
+Accept designs by users
+Update designs by users
+Comment on designs
+Edit comments on designs
+
+Silver:
+
+Be able to upvote/downvote designs
+User Authentication
+
+Gold:
+
+Be able to ask for donation pledges to potentially make shoe designs
+
+USER STORIES:
+1. Be able to load the site
+2. View designs by other users
+3. Comment on designs of other users
+4. Post their own designs
+5. Edit their designs
+6. Delete their designs
+7. Delete their comments
