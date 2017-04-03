@@ -23,7 +23,10 @@ class AddDesign extends Component {
         id: uuid.v4(),
         name: this.refs.name.value,
         category: this.refs.category.value,
-        designer: this.refs.designer.value
+        designer: this.refs.designer.value,
+        imageURL: this.refs.imageURL.value,
+        material: this.refs.material.value,
+        inspiration: this.refs.inspiration.value
       }}, function (){
         this.props.addDesign(this.state.newDesign)
       })
@@ -39,13 +42,14 @@ class AddDesign extends Component {
         <h3>Add Design</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
-            <label>What you wanna call it?</label>
+
             <input type="text" ref="name" placeholder="Name of Design" /><br />
-
-            <label>Designer</label>
             <input type="text" ref="designer" placeholder="Name of Designer" /><br />
+            <input type="text" ref="imageURL" placeholder="Image URL" /><br />
+            <input type="text" ref="material" placeholder="What is it made out of?" /><br />
+            <textarea ref="inspiration" placeholder="What inspired this design?" /><br />
 
-          <label>Category</label>
+
           <select ref="category">
             {categoryOptions}
 

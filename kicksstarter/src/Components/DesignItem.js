@@ -10,8 +10,9 @@ class DesignItem extends Component {
   render() {
     return (
       <li className="Designs">
-        <strong>{this.props.design.name}</strong> | Shoe Type: {this.props.design.category} | Designer: {this.props.design.designer}<br />
-           <button type="submit" onClick={this.deleteDesign.bind(this, this.props.design.id)}>Delete Design</button>
+        <img src={this.props.design.imageURL} alt=""/><br /><strong>{this.props.design.name}</strong> | Shoe Type: {this.props.design.category} | Designer: {this.props.design.designer} |  Material: {this.props.design.material}  <br />
+        {this.props.design.inspiration}<br />
+      <button type="submit" onClick={this.deleteDesign.bind(this, this.props.design.id)}>Delete Design</button>
       </li>
     );
   }
