@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DesignItem from './DesignItem'
-import uuid from 'uuid'
+
 
 class AddDesign extends Component {
   constructor(){
@@ -20,7 +20,6 @@ class AddDesign extends Component {
       alert("Please name your design!")
     }else {
       this.setState({newDesign:{
-        id: uuid.v4(),
         name: this.refs.name.value,
         category: this.refs.category.value,
         designer: this.refs.designer.value,
@@ -38,22 +37,21 @@ class AddDesign extends Component {
       return <option key={category} value={category}>{category}</option>
     })
     return (
-      <div >
+      <div className="addDesign" >
         <h3>Add Design</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
 
-            <input type="text" ref="name" placeholder="Name of Design" /><br />
-            <input type="text" ref="designer" placeholder="Name of Designer" /><br />
-            <input type="text" ref="imageURL" placeholder="Image URL" /><br />
-            <input type="text" ref="material" placeholder="What is it made out of?" /><br />
-            <textarea ref="inspiration" placeholder="What inspired this design?" /><br />
+            <input type="text" ref="name" placeholder="Name of Design" />| |
+            <input type="text" ref="designer" placeholder="Name of Designer" />| |
+            <input type="text" ref="imageURL" placeholder="Image URL" />| |
+            <input type="text" ref="material" placeholder="What is it made out of?" /><br/>
+            <textarea ref="inspiration" placeholder="What inspired this design?" /><br/>
 
-
+            <label>What kind of kick is this?</label><br/>
           <select ref="category">
             {categoryOptions}
-
-          </select>
+          </select><br/><br/>
           </div>
           <input type="submit" value="Add Design" />
         </form>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Designs from "./Components/Designs"
 import AddDesign from "./Components/AddDesign"
-import uuid from 'uuid'
+
 
 import './App.css';
 
@@ -17,7 +17,7 @@ class App extends Component {
   componentWillMount(){
     this.setState({designs: [
       {
-        id:uuid.v4(),
+
         name: "Jordan 3",
         category: "Basketball",
         designer: "Tinker Hatfield",
@@ -26,7 +26,7 @@ class App extends Component {
         inspiration: "The inspirations for the AJ III are AJ I and II, the free throw dunk, an elephant, and last, but not least Michael Jordan. Nike’s selling strategy was simple, and great, they had MJ and Mars Blackmon (Spike Lee). After watching these funny commercials you had to go out and buy yourself a pair."
       },
       {
-        id:uuid.v4(),
+
         name: "Air Max 90",
         category: "Running",
         designer: "Tinker Hatfeild",
@@ -36,7 +36,7 @@ class App extends Component {
 
       },
       {
-        id:uuid.v4(),
+
         name: "Converse All Stars",
         category: "Basketball",
         designer: "Chuck Taylor",

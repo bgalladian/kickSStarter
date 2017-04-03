@@ -16,8 +16,10 @@ class Designs extends Component {
         })
       }
     return (
+
       <div className="Designs">
-        <h3>Latest Designs</h3>
+        
+
         {designItems}
       </div>
     );
