@@ -1,31 +1,62 @@
+body {
+  background-color: dodgerblue;
+}
+
+
+h1 {
+  text-align: center;
+}
 img {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   margin: 0 auto;
+}
+
+form {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  margin: 0 auto;
+
+}
+
+.App h2, h3{
+  text-align: center;
 }
 
 li {
   list-style: none;
   padding: 10px;
-  width: 400px;
+  width: 300px;
+}
+
+input {
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 textarea {
   height: 200px;
-  width: 550px;
+  width: 200px;
+  text-align: center;
 }
 
-.addDesign {
-
+select {
+  width: 200px;
 }
+
 
 .Designs{
+  background-color: white;
+  float: right;
   border: solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 90%;
+  max-width: 60%;
   padding: 100px;
   margin: 10px;
 }

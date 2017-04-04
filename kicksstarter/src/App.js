@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Designs from "./Components/Designs"
 import AddDesign from "./Components/AddDesign"
+import axios from "axios"
 
 
 import './App.css';
@@ -65,8 +66,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AddDesign addDesign={this.handleAddDesign.bind(this)}/>
         <Designs designs={this.state.designs} onDelete={this.handleDeleteDesign.bind(this)}/>
+        <AddDesign addDesign={this.handleAddDesign.bind(this)}/>
       </div>
     );
   }

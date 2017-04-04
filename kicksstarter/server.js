@@ -1,33 +1,50 @@
 'use strict'
 
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const Design = require("./db/connection").Design;
 
-var app = express();
-var router = express.Router();
+
+const app = express();
 
 var port = process.env.API_PORT || 3001;
+mongoose.connect('mongodb://localhost/kicksstarter_db')
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use(cors())
 
-app.use(function(req, res, next) {
- res.setHeader(‘Access-Control-Allow-Origin’, ‘*’);
- res.setHeader(‘Access-Control-Allow-Credentials’, ‘true’);
- res.setHeader(‘Access-Control-Allow-Methods’, ‘GET,HEAD,OPTIONS,POST,PUT,DELETE’);
- res.setHeader(‘Access-Control-Allow-Headers’, ‘Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers’);
+app.get('/designs', (req, res) => {
+  Design.find({}, (err, designs) => {
+    res.json(designs)
+  })
+})
 
- res.setHeader('Cashe-Control', 'no-cache');
- next()
- });
+app.get('/designs/:id', (req, res) => {
+  Design.findOne({id: req.params.id}, (err, designs) => {
+    res.json(design)
+  })
+})
 
- router.get('/', function(req, res) {
-   res.json({message: 'API Connected'});
- });
+app.post('/designs', (req, res) => {
+  Design.create(req.body, (err, design) => {
+    res.json(design)
+  })
+})
 
- app.use('/api', router);
+app.put('/designs/:id', (req, res) => {
+  Design.findeOneAndUpdate({id: req.params.id}, req.body, {new: true}, (err, design) => {
+    res.json(desgin)
+  })
+})
 
- app.listen(port, function(){
-   console.log('api running on port ${port}')
- })
+app.delete('/designs/:id', (req, res) => {
+  Design.findOneAndRemove({id: req.params.id}, (err) => {
+    res.redirect('/designs')
+  })
+})
+
+app.listen(app.get('port'), () => {
+  console.log(`Express Listening on Port ${app.get('port')}`)
+})

@@ -42,16 +42,12 @@ class AddDesign extends Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
 
-            <input type="text" ref="name" placeholder="Name of Design" />| |
-            <input type="text" ref="designer" placeholder="Name of Designer" />| |
-            <input type="text" ref="imageURL" placeholder="Image URL" />| |
-            <input type="text" ref="material" placeholder="What is it made out of?" /><br/>
-            <textarea ref="inspiration" placeholder="What inspired this design?" /><br/>
-
-            <label>What kind of kick is this?</label><br/>
-          <select ref="category">
-            {categoryOptions}
-          </select><br/><br/>
+            <input type="text" ref="name" placeholder="Name of Design" />
+            <input type="text" ref="designer" placeholder="Name of Designer" />
+            <input type="text" ref="imageURL" placeholder="Image URL" />
+            <input type="text" ref="material" placeholder="What is it made out of?" /><br/><br/>
+            <select ref="category" placeholder="Please Select a Category">{categoryOptions}</select><br /><br/>
+            <textarea ref="inspiration" placeholder="What inspired you?"/><br/>
           </div>
           <input type="submit" value="Add Design" />
         </form>
