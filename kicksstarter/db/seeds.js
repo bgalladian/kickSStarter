@@ -1,7 +1,6 @@
-let mongoose = require("./models.js").Design
 let seedData = require("./seedData.json")
-
-const Design = mongoose.model("Design")
+let mongoose = require("./connection.js")
+let Design = require("./models.js").Design
 
 Design.remove({}, () => {
   Design.create(seedData, () => {

@@ -8,6 +8,4 @@ mongoose.connect("mongodb://localhost/kicksstarter_db", (err, res) => {
   }
 })
 
-const db = mongoose.connection
-
 module.exports = mongoose
